@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+
+{% load static crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h1>{{ object.name }}</h1>
+                <p>{{ object.body }}</p>
+                <img src="{{ object.image.url }}"  alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

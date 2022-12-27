@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <div class="container py-4">
+        <div class="row">
+                {% for post in object_list %}
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ post.name }}</h5>
+                                    <p class="card-text">{{ post.body|truncatewords:'2' }}</p>
+                                    <a href="{% url 'detail' pk=post.pk %}" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}
